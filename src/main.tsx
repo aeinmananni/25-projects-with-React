@@ -5,6 +5,8 @@ import { BrowserRouter } from "react-router-dom";
 
 createRoot(document.getElementById("root")!).render(
   <BrowserRouter>
-    <App />
+    <div className="flex flex-col overflow-hidden h-screen w-full">
+      <App />
+    </div>
   </BrowserRouter>
 );
