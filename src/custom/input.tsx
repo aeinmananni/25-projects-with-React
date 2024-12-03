@@ -1,6 +1,5 @@
 import { InputHTMLAttributes } from "react";
 import { forwardRef } from "react";
-import { UseContext } from "../context";
 
 type StylesType = {
   iconStyles?: string;
@@ -10,15 +9,15 @@ type StylesType = {
 type InputType = {
   icon?: React.ReactNode;
   style?: StylesType;
+  onClick?: () => void;
 } & InputHTMLAttributes<HTMLInputElement>;
 
 const Input = forwardRef<HTMLInputElement, InputType>(
-  ({ style, icon, ...props }, ref) => {
-    const { setToggle } = UseContext();
+  ({ onClick, style, icon, ...props }, ref) => {
     return (
       <div className={`relative w-full ${style?.parentClassName}`}>
         <i
-          onClick={() => setToggle && setToggle((c) => !c)}
+          onClick={onClick}
           className={`absolute cursor-pointer ${style?.iconStyles} `}
         >
           {icon}
