@@ -8,7 +8,7 @@ const PasswordInput = () => {
     <div className="p-2 w-full flex justify-center items-center h-full">
       <Input
         type={toggle ? "text" : "password"}
-        className="border-2  rounded-md w-64 shadow-lg py-2"
+        className="border-2  rounded-md w-64 shadow-lg py-2 px-2"
         style={{
           iconStyles: "left-2 top-3 text-lg  absolute",
         }}
