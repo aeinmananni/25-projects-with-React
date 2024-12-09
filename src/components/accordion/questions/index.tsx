@@ -14,7 +14,7 @@ const Question = ({ title, onClick, exp, className }: QuestionProps) => {
   return (
     <div className="flex flex-col">
       <div
-        className={`border flex items-center justify-between p-2 rounded-lg ${className}`}
+        className={`border overflow-hidden flex items-center justify-between p-2 rounded-lg  ${className}`}
       >
         <h1>{title}</h1>
         <Button
@@ -27,7 +27,15 @@ const Question = ({ title, onClick, exp, className }: QuestionProps) => {
           {<BiPlus />}
         </Button>
       </div>
-      {showInfo && exp && <div className="w-full h-max p-2">{exp}</div>}
+      {exp && (
+        <div
+          className={`w-full  px-2  mt-4 overflow-hidden transition-[max-height] duration-300  ${
+            showInfo ? "max-h-64  " : "max-h-0 "
+          }`}
+        >
+          <span>{exp}</span>
+        </div>
+      )}
     </div>
   );
 };
