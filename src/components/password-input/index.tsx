@@ -11,7 +11,7 @@ const PasswordInput = () => {
         type={toggle ? "text" : "password"}
         className="border-2  rounded-md w-64 shadow-lg py-2 px-2"
         style={{
-          iconStyles: "left-2 top-3 text-lg  absolute",
+          iconStyles: "left-2 top-3 text-lg ",
         }}
         icon={toggle ? <IoEyeOutline /> : <IoEyeOffOutline />}
       />

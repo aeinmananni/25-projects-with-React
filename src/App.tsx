@@ -1,11 +1,11 @@
 // import PasswordInput from "./components/password-input";
-import Accordion from "./components/accordion";
 import { ProviderContext } from "./context";
+import { RouterProvider } from "react-router";
+import router from "./router/router";
 const App = () => {
   return (
     <ProviderContext>
-      {/* <PasswordInput /> */}
-      <Accordion />
+      <RouterProvider router={router} />
     </ProviderContext>
   );
 };
