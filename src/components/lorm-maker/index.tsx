@@ -2,6 +2,7 @@ import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import Button from "../../custom/button";
 import Input from "../../custom/input";
 import { data } from "./data";
+
 const LormMaker = () => {
   const [count, setCount] = useState<number>(0);
   const [text, setText] = useState<string[]>([]);
@@ -25,6 +26,9 @@ const LormMaker = () => {
             <Button
               type="submit"
               className="bg-blue-500 text-white w-1/12 rounded-md"
+              onClick={() =>
+                count !== 0 ? setText(data.slice(0, +count)) : setText(data)
+              }
             >
               بساز
             </Button>
