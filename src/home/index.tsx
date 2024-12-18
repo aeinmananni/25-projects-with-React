@@ -10,6 +10,7 @@ const Home = () => {
         <Link to={"/"}>{"passwordInput"}</Link>
         <Link to={"accordion"}>{"Accordion"}</Link>
         <Link to={"lorm-maker"}>{"Lorm maker"}</Link>
+        <Link to={"navbar"}>{"navbar"}</Link>
       </div>
     </div>
   );
