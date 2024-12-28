@@ -2,11 +2,19 @@ import { FaReact } from "react-icons/fa";
 import { FcMenu } from "react-icons/fc";
 import Link from "../../custom/link";
 import { links, socials } from "./data";
-
+import { UseContext } from "../../context";
+import { RxCross1 } from "react-icons/rx";
 const HeaderNav = () => {
+  const { setShowMenu, showMenu } = UseContext();
   return (
     <div className="w-full h-12 shadow-md flex justify-between items-center p-2 gap-2 relative">
-      <FcMenu className="sm:hidden" size={20} cursor={"pointer"} />
+      <i onClick={() => setShowMenu((c) => !c)}>
+        {showMenu ? (
+          <RxCross1 cursor={"pointer"} />
+        ) : (
+          <FcMenu className="sm:hidden" size={20} cursor={"pointer"} />
+        )}
+      </i>
       <FaReact size={43} className="text-blue-600 absolute left-2 sm:right-2" />
       <div className=" w-full  gap-2  justify-center  hidden sm:flex">
         {links.map((it, index) => (

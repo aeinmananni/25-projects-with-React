@@ -2,6 +2,8 @@ import { createContext, useState, useContext as useReactContext } from "react";
 
 type ContextType = {
   toggle: boolean;
+  showMenu: boolean;
+  setShowMenu: (value: boolean | ((c: boolean) => boolean)) => void;
   setToggle?: (value: boolean | ((c: boolean) => boolean)) => void;
 };
 
@@ -13,9 +15,12 @@ type ProviderContextType = {
 
 const ProviderContext = ({ children }: ProviderContextType) => {
   const [toggle, setToggle] = useState<boolean>(false);
+  const [showMenu, setShowMenu] = useState<boolean>(false);
 
   return (
-    <contexthanlder.Provider value={{ toggle, setToggle }}>
+    <contexthanlder.Provider
+      value={{ toggle, setToggle, showMenu, setShowMenu }}
+    >
       {children}
     </contexthanlder.Provider>
   );
