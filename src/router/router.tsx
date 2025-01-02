@@ -4,6 +4,7 @@ import Accordion from "../components/accordion";
 import LormMaker from "../components/lorm-maker";
 import Home from "../home";
 import Navbar from "../components/navbar";
+import { Reviews } from "../components/reviews";
 
 const routes: RouteObject[] = [
   {
@@ -14,6 +15,7 @@ const routes: RouteObject[] = [
       { path: "accordion", element: <Accordion /> },
       { path: "lorm-maker", element: <LormMaker /> },
       { path: "navbar", element: <Navbar /> },
+      { path: "reviews", element: <Reviews /> },
     ],
   },
 ];

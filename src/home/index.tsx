@@ -11,6 +11,7 @@ const Home = () => {
         <Link to={"accordion"}>{"Accordion"}</Link>
         <Link to={"lorm-maker"}>{"Lorm maker"}</Link>
         <Link to={"navbar"}>{"navbar"}</Link>
+        <Link to={"reviews"}>{"reviews"}</Link>
       </div>
     </div>
   );
