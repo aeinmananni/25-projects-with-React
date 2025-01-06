@@ -1,4 +1,4 @@
-import Cart from "./cart";
+import Cart from "./cart/cart";
 
 const Reviews = () => {
   return (
