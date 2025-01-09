@@ -46,7 +46,10 @@ const Cart = () => {
           handleTransition(prevIndex);
         }}
         onRandom={() => {
-          const randomIndex = Math.floor(Math.random() * users.length);
+          let randomIndex = Math.floor(Math.random() * users.length);
+          if (randomIndex === index) {
+            randomIndex = (index + 1) % users.length;
+          }
           handleTransition(randomIndex);
         }}
       />

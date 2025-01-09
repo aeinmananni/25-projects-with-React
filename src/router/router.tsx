@@ -5,7 +5,7 @@ import LormMaker from "../components/lorm-maker";
 import Home from "../home";
 import Navbar from "../components/navbar";
 import { Reviews } from "../components/reviews";
-
+import { ScrollTracker } from "../components/scroll-tracker";
 const routes: RouteObject[] = [
   {
     path: "/",
@@ -16,6 +16,7 @@ const routes: RouteObject[] = [
       { path: "lorm-maker", element: <LormMaker /> },
       { path: "navbar", element: <Navbar /> },
       { path: "reviews", element: <Reviews /> },
+      { path: "scroll-tracker", element: <ScrollTracker /> },
     ],
   },
 ];
