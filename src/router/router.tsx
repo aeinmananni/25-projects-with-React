@@ -3,9 +3,10 @@ import PasswordInput from "../components/password-input";
 import Accordion from "../components/accordion";
 import LormMaker from "../components/lorm-maker";
 import Home from "../home";
-import Navbar from "../components/navbar";
 import { Reviews } from "../components/reviews";
 import { ScrollTracker } from "../components/scroll-tracker";
+import { SearchImages } from "../components/search-images";
+import Navbar from "../components/navbar";
 const routes: RouteObject[] = [
   {
     path: "/",
@@ -17,6 +18,7 @@ const routes: RouteObject[] = [
       { path: "navbar", element: <Navbar /> },
       { path: "reviews", element: <Reviews /> },
       { path: "scroll-tracker", element: <ScrollTracker /> },
+      { path: "search-images", element: <SearchImages /> },
     ],
   },
 ];

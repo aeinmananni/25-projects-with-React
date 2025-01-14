@@ -13,6 +13,7 @@ const Home = () => {
         <Link to={"navbar"}>{"navbar"}</Link>
         <Link to={"reviews"}>{"reviews"}</Link>
         <Link to={"scroll-tracker"}>{"scrollTracker"}</Link>
+        <Link to={"search-images"}>{"searchImages"}</Link>
       </div>
     </div>
   );
