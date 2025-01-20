@@ -1,6 +1,8 @@
 import Header from "./header";
-
+import { useGetImages } from "../../api";
 export default function SearchImages() {
+  const { data } = useGetImages();
+  console.log("DATA : ", data);
   return (
     <div className="w-full h-full flex flex-col">
       <Header />

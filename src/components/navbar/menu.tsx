@@ -1,9 +1,9 @@
 import Link from "../../custom/link";
 import { links } from "./data";
-import { UseContext } from "../../context";
+import { useReactContext } from "../../context";
 import { useEffect, useRef } from "react";
 const Menu = () => {
-  const { showMenu } = UseContext();
+  const { showMenu } = useReactContext();
 
   const containerDivRef = useRef<HTMLDivElement | null>(null);
 

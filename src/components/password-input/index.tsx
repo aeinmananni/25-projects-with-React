@@ -1,9 +1,9 @@
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
-import { UseContext } from "../../context";
+import { useReactContext } from "../../context";
 import Input from "../../custom/input";
 
 const PasswordInput = () => {
-  const { toggle, setToggle } = UseContext();
+  const { toggle, setToggle } = useReactContext();
   return (
     <div className="p-2 w-full flex justify-center items-center h-full">
       <Input

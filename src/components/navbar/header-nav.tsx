@@ -2,10 +2,10 @@ import { FaReact } from "react-icons/fa";
 import { FcMenu } from "react-icons/fc";
 import Link from "../../custom/link";
 import { links, socials } from "./data";
-import { UseContext } from "../../context";
+import { useReactContext } from "../../context";
 import { RxCross1 } from "react-icons/rx";
 const HeaderNav = () => {
-  const { setShowMenu, showMenu } = UseContext();
+  const { setShowMenu, showMenu } = useReactContext();
   return (
     <div className="w-full h-12 shadow-md flex justify-between items-center p-2 gap-2 relative">
       <i onClick={() => setShowMenu((c) => !c)}>
