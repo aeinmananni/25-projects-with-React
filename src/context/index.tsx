@@ -19,7 +19,7 @@ type ProviderContextType = {
 const ProviderContext = ({ children }: ProviderContextType) => {
   const [toggle, setToggle] = useState<boolean>(false);
   const [showMenu, setShowMenu] = useState<boolean>(false);
-  const [value, setValue] = useState<string>("");
+  const [value, setValue] = useState<string>("boy");
 
   return (
     <contexthanlder.Provider
