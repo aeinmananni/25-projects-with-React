@@ -1,0 +1,5 @@
+
+
+.Input{
+      @apply border outline-none focus:ring-2 focus:ring-orange-400 rounded-md py-1 px-2;
+}

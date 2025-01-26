@@ -14,6 +14,7 @@ const Home = () => {
         <Link to={"reviews"}>{"reviews"}</Link>
         <Link to={"scroll-tracker"}>{"scrollTracker"}</Link>
         <Link to={"search-images"}>{"searchImages"}</Link>
+        <Link to={"send-email"}>{"sendEmail"}</Link>
       </div>
     </div>
   );
