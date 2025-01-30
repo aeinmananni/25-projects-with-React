@@ -4,7 +4,7 @@ type Styles = {
   parentClassName?: string;
 };
 
-type TextareaProps = {
+export type TextareaProps = {
   icon?: React.ReactNode;
   onClick?: () => void;
   label?: string;

@@ -6,14 +6,14 @@ type StylesType = {
   parentClassName?: string;
 };
 
-type InputType = {
+export type InputProps = {
   icon?: React.ReactNode;
   label?: string;
   style?: StylesType;
   onClick?: () => void;
 } & InputHTMLAttributes<HTMLInputElement>;
 
-const Input = forwardRef<HTMLInputElement, InputType>(
+const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ label, onClick, style, icon, ...props }, ref) => {
     return (
       <div className={`relative  ${style?.parentClassName}`}>

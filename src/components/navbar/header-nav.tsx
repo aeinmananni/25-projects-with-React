@@ -1,9 +1,9 @@
 import { FaReact } from "react-icons/fa";
 import { FcMenu } from "react-icons/fc";
-import Link from "../../custom/link";
 import { links, socials } from "./data";
 import { useReactContext } from "../../context";
 import { RxCross1 } from "react-icons/rx";
+import { Link } from "../../custom/link";
 const HeaderNav = () => {
   const { setShowMenu, showMenu } = useReactContext();
   return (

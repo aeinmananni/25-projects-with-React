@@ -1,6 +1,6 @@
 import Header from "./header";
 import { useGetImages } from "../../api";
-import Image from "../../custom/img";
+import { Image } from "../../custom/img";
 
 export default function SearchImages() {
   const { data } = useGetImages();

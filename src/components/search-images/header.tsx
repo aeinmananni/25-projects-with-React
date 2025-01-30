@@ -1,8 +1,8 @@
 import { ChangeEvent, useState } from "react";
-import Button from "../../custom/button";
-import Input from "../../custom/input";
 import { MdOutlinePhotoSizeSelectActual } from "react-icons/md";
 import { useReactContext } from "../../context";
+import { Input } from "../../custom/input";
+import { Button } from "../../custom/button";
 export default function Header() {
   const [input, setInput] = useState<string>("");
   const { setValue } = useReactContext();

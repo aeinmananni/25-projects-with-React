@@ -1,4 +1,4 @@
-import Image from "../../../custom/img";
+import Image from "../../../custom/img/img";
 import Footer from "./footer";
 import Main from "./main";
 import { users } from "../data";

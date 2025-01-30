@@ -1,7 +1,8 @@
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
-import Button from "../../custom/button";
-import Input from "../../custom/input";
+
 import { data } from "./data";
+import { Input } from "../../custom/input";
+import { Button } from "../../custom/button";
 
 const LormMaker = () => {
   const [count, setCount] = useState<number>(0);

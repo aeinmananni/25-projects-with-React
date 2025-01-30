@@ -1,4 +1,4 @@
-import Button from "../../../custom/button";
+import { Button } from "../../../custom/button";
 
 type FooterProps = {
   onNext?: () => void;

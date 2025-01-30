@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 import { useState } from "react";
-import Button from "../../../custom/button";
+
 import { BiPlus } from "react-icons/bi";
+import { Button } from "../../../custom/button";
 type QuestionProps = {
   className?: string;
   title?: string;

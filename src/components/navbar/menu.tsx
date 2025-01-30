@@ -1,7 +1,7 @@
-import Link from "../../custom/link";
 import { links } from "./data";
 import { useReactContext } from "../../context";
 import { useEffect, useRef } from "react";
+import { Link } from "../../custom/link";
 const Menu = () => {
   const { showMenu } = useReactContext();
 

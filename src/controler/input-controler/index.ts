@@ -1,0 +1,1 @@
+export {default as InputControler} from './input-controler'

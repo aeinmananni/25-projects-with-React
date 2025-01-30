@@ -1,6 +1,6 @@
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 import { useReactContext } from "../../context";
-import Input from "../../custom/input";
+import { Input } from "../../custom/input";
 
 const PasswordInput = () => {
   const { toggle, setToggle } = useReactContext();
