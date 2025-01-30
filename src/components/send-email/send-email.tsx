@@ -1,20 +1,42 @@
 import { InputControler } from "../../controler/input-controler";
-
+import emailjs from "@emailjs/browser";
 import styles from "./style.module.css";
 import Header from "./header";
 import { EmailBoxType } from "./model";
 import { useForm } from "react-hook-form";
 import { TextareaControler } from "../../controler/textarea-controler";
 import { Button } from "../../custom/button";
+import { useRef } from "react";
+import { useReactContext } from "../../context";
+import { Alert } from "../alert";
 const SendEmail = () => {
+  const { setAlert, alert } = useReactContext();
+  const formRef = useRef<HTMLFormElement | null>(null);
   const { control, handleSubmit, reset } = useForm<EmailBoxType>();
-  const onSubmit = (data: EmailBoxType) => {
-    console.log("ONSUBMIT : ", data);
+  const onSubmit = () => {
+    if (formRef.current) {
+      emailjs
+        .sendForm(
+          import.meta.env.VITE_EMAILJS_SERVICE_ID,
+          import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+          formRef.current,
+          import.meta.env.VITE_EMAILJS_USER_ID
+        )
+        .then(() => {
+          setAlert({ message: "پیام شما با موفقیت ارسال شد", type: "success" });
+          reset({ email: "", fullName: "", exp: "" });
+        })
+        .catch(() => {
+          setAlert({ message: "خطا درارسال ایمیل", type: "error" });
+        });
+    }
     reset({ email: "", fullName: "", exp: "" });
   };
   return (
-    <div className="w-full h-full flex justify-center items-center">
+    <div className="w-full h-full flex justify-center items-center relative">
+      {alert.message && <Alert />}
       <form
+        ref={formRef}
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col w-1/3 gap-9 shadow-lg rounded-md p-4 shadow-orange-200"
       >

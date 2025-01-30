@@ -1,5 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 import { createContext, useState, useContext } from "react";
+import { AlertStatesType } from "../components/alert";
 
 type ContextType = {
   toggle: boolean;
@@ -8,6 +9,8 @@ type ContextType = {
   setToggle?: (value: boolean | ((c: boolean) => boolean)) => void;
   value: string;
   setValue: (value: string) => void;
+  alert: AlertStatesType;
+  setAlert: (value: AlertStatesType) => void;
 };
 
 const contexthanlder = createContext<ContextType | null>(null);
@@ -20,10 +23,22 @@ const ProviderContext = ({ children }: ProviderContextType) => {
   const [toggle, setToggle] = useState<boolean>(false);
   const [showMenu, setShowMenu] = useState<boolean>(false);
   const [value, setValue] = useState<string>("boy");
-
+  const [alert, setAlert] = useState<AlertStatesType>({
+    message: "",
+    type: "success",
+  });
   return (
     <contexthanlder.Provider
-      value={{ toggle, setToggle, showMenu, setShowMenu, value, setValue }}
+      value={{
+        toggle,
+        setToggle,
+        showMenu,
+        setShowMenu,
+        value,
+        setValue,
+        alert,
+        setAlert,
+      }}
     >
       {children}
     </contexthanlder.Provider>
