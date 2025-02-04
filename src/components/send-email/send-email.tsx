@@ -12,10 +12,15 @@ import { Alert } from "../alert";
 const SendEmail = () => {
   const { setAlert, alert } = useReactContext();
   const formRef = useRef<HTMLFormElement | null>(null);
-  const { control, handleSubmit, reset } = useForm<EmailBoxType>();
-  const onSubmit = () => {
+  const {
+    control,
+    handleSubmit,
+    reset,
+    formState: { isSubmitting },
+  } = useForm<EmailBoxType>();
+  const onSubmit = async () => {
     if (formRef.current) {
-      emailjs
+      await emailjs
         .sendForm(
           import.meta.env.VITE_EMAILJS_SERVICE_ID,
           import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
@@ -63,10 +68,13 @@ const SendEmail = () => {
           />
         </div>
         <Button
+          disabled={isSubmitting}
           type="submit"
-          className="bg-orange-600 text-white w-1/4 rounded-sm text-sm mx-auto"
+          className={` text-white w-1/4 rounded-sm text-sm mx-auto ${
+            !isSubmitting ? "bg-orange-600" : " bg-orange-200"
+          }`}
         >
-          ارسال
+          {!isSubmitting ? "ارسال" : "درحال ارسال..."}
         </Button>
       </form>
     </div>

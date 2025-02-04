@@ -8,6 +8,7 @@ import { ScrollTracker } from "../components/scroll-tracker";
 import { SearchImages } from "../components/search-images";
 import Navbar from "../components/navbar";
 import { SendEmail } from "../components/send-email";
+import { DarkMode } from "../components/dark-mode";
 const routes: RouteObject[] = [
   {
     path: "/",
@@ -21,6 +22,7 @@ const routes: RouteObject[] = [
       { path: "scroll-tracker", element: <ScrollTracker /> },
       { path: "search-images", element: <SearchImages /> },
       { path: "send-email", element: <SendEmail /> },
+      { path: "dark-mode", element: <DarkMode /> },
     ],
   },
 ];
