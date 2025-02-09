@@ -11,6 +11,8 @@ type ContextType = {
   setValue: (value: string) => void;
   alert: AlertStatesType;
   setAlert: (value: AlertStatesType) => void;
+  darkMode: boolean;
+  setDarkMode: (value: boolean | ((v: boolean) => boolean)) => void;
 };
 
 const contexthanlder = createContext<ContextType | null>(null);
@@ -23,6 +25,7 @@ const ProviderContext = ({ children }: ProviderContextType) => {
   const [toggle, setToggle] = useState<boolean>(false);
   const [showMenu, setShowMenu] = useState<boolean>(false);
   const [value, setValue] = useState<string>("boy");
+  const [darkMode, setDarkMode] = useState<boolean>(false);
   const [alert, setAlert] = useState<AlertStatesType>({
     message: "",
     type: "success",
@@ -38,6 +41,8 @@ const ProviderContext = ({ children }: ProviderContextType) => {
         setValue,
         alert,
         setAlert,
+        darkMode,
+        setDarkMode,
       }}
     >
       {children}
