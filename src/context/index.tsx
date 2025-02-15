@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import { createContext, useState, useContext } from "react";
+import { createContext, useState, useContext, useEffect } from "react";
 import { AlertStatesType } from "../components/alert";
 
 type ContextType = {
@@ -25,11 +25,19 @@ const ProviderContext = ({ children }: ProviderContextType) => {
   const [toggle, setToggle] = useState<boolean>(false);
   const [showMenu, setShowMenu] = useState<boolean>(false);
   const [value, setValue] = useState<string>("boy");
-  const [darkMode, setDarkMode] = useState<boolean>(false);
+  const [darkMode, setDarkMode] = useState<boolean>(() => {
+    const saveMode = localStorage.getItem("darkMode");
+
+    return saveMode ? JSON.parse(saveMode) : false;
+  });
   const [alert, setAlert] = useState<AlertStatesType>({
     message: "",
     type: "success",
   });
+  useEffect(() => {
+    localStorage.setItem("darkMode", JSON.stringify(darkMode));
+  }, [darkMode]);
+
   return (
     <contexthanlder.Provider
       value={{

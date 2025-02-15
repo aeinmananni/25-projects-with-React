@@ -1,5 +1,4 @@
 import { Image } from "../../../../custom/img";
-import { useReactContext } from "../../../../context";
 type CartProps = {
   src: string;
   title: string;

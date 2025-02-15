@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <div
       className={`w-full flex h-16 shadow-md duration-300 ${
-        darkMode ? "bg-sky-900" : "bg-slate-300"
+        darkMode ? "bg-slate-900" : "bg-slate-300"
       }   justify-evenly items-center`}
     >
       <div className="flex h-full w-max items-center gap-3 justify-start">

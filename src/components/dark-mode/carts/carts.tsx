@@ -7,8 +7,8 @@ const Carts = () => {
     <div
       className={`flex flex-col gap-2 w-full h-full duration-300 ${
         darkMode
-          ? "border-slate-200 bg-sky-900"
-          : "border-sky-900 bg-transparent"
+          ? "border-slate-200 bg-slate-900"
+          : "border-slate-900 bg-transparent"
       } border  p-2`}
     >
       <div className="flex flex-col gap-3 justify-center items-center">
