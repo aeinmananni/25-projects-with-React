@@ -25,15 +25,27 @@ const ProviderContext = ({ children }: ProviderContextType) => {
   const [toggle, setToggle] = useState<boolean>(false);
   const [showMenu, setShowMenu] = useState<boolean>(false);
   const [value, setValue] = useState<string>("boy");
+  // const [darkMode, setDarkMode] = useState<boolean>(() => {
+  //   const saveMode = localStorage.getItem("darkMode");
+  //   return saveMode ? JSON.parse(saveMode) : false;
+  // });
   const [darkMode, setDarkMode] = useState<boolean>(() => {
     const saveMode = localStorage.getItem("darkMode");
-
-    return saveMode ? JSON.parse(saveMode) : false;
+    if (saveMode === null) {
+      if (window.matchMedia("(prefers-color-scheme:dark)").matches) {
+        return true;
+      } else {
+        return false;
+      }
+    } else {
+      return JSON.parse(saveMode);
+    }
   });
   const [alert, setAlert] = useState<AlertStatesType>({
     message: "",
     type: "success",
   });
+
   useEffect(() => {
     localStorage.setItem("darkMode", JSON.stringify(darkMode));
   }, [darkMode]);
