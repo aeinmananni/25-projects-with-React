@@ -16,6 +16,7 @@ const Home = () => {
         <Link to={"search-images"}>{"searchImages"}</Link>
         <Link to={"send-email"}>{"sendEmail"}</Link>
         <Link to={"dark-mode"}>{"darkMode"}</Link>
+        <Link to={"Sidebar"}>{"Sidebar"}</Link>
       </div>
     </div>
   );
