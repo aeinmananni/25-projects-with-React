@@ -1,5 +1,12 @@
 /* eslint-disable react-refresh/only-export-components */
-import { createContext, useState, useContext, useEffect } from "react";
+import {
+  createContext,
+  useState,
+  useContext,
+  useEffect,
+  Dispatch,
+  SetStateAction,
+} from "react";
 import { AlertStatesType } from "../components/alert";
 
 type ContextType = {
@@ -13,6 +20,8 @@ type ContextType = {
   setAlert: (value: AlertStatesType) => void;
   darkMode: boolean;
   setDarkMode: (value: boolean | ((v: boolean) => boolean)) => void;
+  sidebar: boolean;
+  setSidebar: Dispatch<SetStateAction<boolean>>;
 };
 
 const contexthanlder = createContext<ContextType | null>(null);
@@ -25,6 +34,7 @@ const ProviderContext = ({ children }: ProviderContextType) => {
   const [toggle, setToggle] = useState<boolean>(false);
   const [showMenu, setShowMenu] = useState<boolean>(false);
   const [value, setValue] = useState<string>("boy");
+  const [sidebar, setSidebar] = useState<boolean>(false);
   // const [darkMode, setDarkMode] = useState<boolean>(() => {
   //   const saveMode = localStorage.getItem("darkMode");
   //   return saveMode ? JSON.parse(saveMode) : false;
@@ -63,6 +73,8 @@ const ProviderContext = ({ children }: ProviderContextType) => {
         setAlert,
         darkMode,
         setDarkMode,
+        setSidebar,
+        sidebar,
       }}
     >
       {children}

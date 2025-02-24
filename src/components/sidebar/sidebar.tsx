@@ -2,12 +2,20 @@ import { NavLink } from "react-router";
 import Header from "./header";
 import { data } from "./data";
 import { HiOutlineXCircle } from "react-icons/hi2";
+import { useReactContext } from "../../context";
+
 const Sidebar = () => {
+  const { setSidebar, sidebar } = useReactContext();
   return (
     <div className="w-full h-full p-2 relative">
       <Header />
-      <div className="absolute h-full bg-purple-300 w-1/6 start-0 top-0 rounded-l-md pt-5 pl-4">
+      <div
+        className={`absolute duration-300 h-full bg-purple-300 w-1/6 start-0 top-0 rounded-l-md pt-5 pl-4 ${
+          sidebar ? "trasnlate-x-0" : "translate-x-full"
+        }`}
+      >
         <HiOutlineXCircle
+          onClick={() => setSidebar(false)}
           size={20}
           className="absolute end-1 top-0.5 cursor-pointer"
         />
