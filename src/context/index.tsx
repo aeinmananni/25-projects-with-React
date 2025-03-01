@@ -8,7 +8,7 @@ import {
   SetStateAction,
 } from "react";
 import { AlertStatesType } from "../components/alert";
-
+import { BooksType } from "../components/library/model";
 type ContextType = {
   toggle: boolean;
   showMenu: boolean;
@@ -22,6 +22,8 @@ type ContextType = {
   setDarkMode: (value: boolean | ((v: boolean) => boolean)) => void;
   sidebar: boolean;
   setSidebar: Dispatch<SetStateAction<boolean>>;
+  books: BooksType | null;
+  setBooks: Dispatch<SetStateAction<BooksType | null>>;
 };
 
 const contexthanlder = createContext<ContextType | null>(null);
@@ -35,6 +37,7 @@ const ProviderContext = ({ children }: ProviderContextType) => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
   const [value, setValue] = useState<string>("boy");
   const [sidebar, setSidebar] = useState<boolean>(false);
+  const [books, setBooks] = useState<BooksType | null>(null);
   // const [darkMode, setDarkMode] = useState<boolean>(() => {
   //   const saveMode = localStorage.getItem("darkMode");
   //   return saveMode ? JSON.parse(saveMode) : false;
@@ -75,6 +78,8 @@ const ProviderContext = ({ children }: ProviderContextType) => {
         setDarkMode,
         setSidebar,
         sidebar,
+        books,
+        setBooks,
       }}
     >
       {children}
