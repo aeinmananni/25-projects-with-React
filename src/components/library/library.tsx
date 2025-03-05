@@ -7,7 +7,7 @@ export default function Library() {
         <span className="text-lg">{"لیست کتاب ها"}</span>
         <small>{"کتاب جدید خودرا به کتابخانه اضافه کنید"}</small>
       </div>
-      <div className="flex">
+      <div className="flex justify-between p-4">
         <Form />
         <Table />
       </div>
