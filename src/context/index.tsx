@@ -37,7 +37,10 @@ const ProviderContext = ({ children }: ProviderContextType) => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
   const [value, setValue] = useState<string>("boy");
   const [sidebar, setSidebar] = useState<boolean>(false);
-  const [books, setBooks] = useState<BooksType[] | null>([]);
+  const [books, setBooks] = useState<BooksType[] | null>(() => {
+    const storedBooks = localStorage.getItem("books");
+    return storedBooks ? JSON.parse(storedBooks) : [];
+  });
   // const [darkMode, setDarkMode] = useState<boolean>(() => {
   //   const saveMode = localStorage.getItem("darkMode");
   //   return saveMode ? JSON.parse(saveMode) : false;
@@ -63,6 +66,11 @@ const ProviderContext = ({ children }: ProviderContextType) => {
     localStorage.setItem("darkMode", JSON.stringify(darkMode));
   }, [darkMode]);
 
+  useEffect(() => {
+    if (books !== null) {
+      localStorage.setItem("books", JSON.stringify(books));
+    }
+  }, [books]);
   return (
     <contexthanlder.Provider
       value={{

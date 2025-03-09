@@ -1,14 +1,14 @@
 import { useReactContext } from "../../../context";
 import { BooksType } from "../model";
 import { FaRegTrashCan } from "react-icons/fa6";
-const column: Record<keyof BooksType, string> = {
+const column: Record<keyof Omit<BooksType, "bookId">, string> = {
   bookNumber: "شماره کتاب",
   title: "عنوان",
   author: "نویسنده",
 };
 
 export default function Table() {
-  const { books } = useReactContext();
+  const { books, setBooks } = useReactContext();
   const conditions = (index: number) =>
     index > 0 && index !== Object.keys(column).length;
   return (
@@ -24,7 +24,7 @@ export default function Table() {
                   }`}
                   key={colIndex}
                 >
-                  {column[col as keyof BooksType]}
+                  {column[col as keyof Omit<BooksType, "bookId">]}
                 </th>
               ))}
               <th className="text-xs flex items-center justify-center">
@@ -50,6 +50,11 @@ export default function Table() {
                 ))}
                 <td className="border flex justify-center items-center">
                   <FaRegTrashCan
+                    onClick={() =>
+                      setBooks((prev) =>
+                        (prev || [])?.filter((it) => it.bookId !== book.bookId)
+                      )
+                    }
                     size={22}
                     className="text-red-900 cursor-pointer"
                   />

@@ -10,8 +10,10 @@ const Form = () => {
   const { control, handleSubmit, reset } = useForm<BooksType>();
   const { setBooks } = useReactContext();
   const onSubmit = (data: BooksType) => {
-    console.log(data);
-    setBooks((prev) => [...(prev || []), data]);
+    setBooks((prev) => [
+      ...(prev || []),
+      { ...data, bookId: (prev?.length || 0) + 1 },
+    ]);
     reset({ author: "", bookNumber: "", title: "" });
   };
   return (
