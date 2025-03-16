@@ -11,6 +11,7 @@ import { SendEmail } from "../components/send-email";
 import { DarkMode } from "../components/dark-mode";
 import { Sidebar } from "../components/sidebar";
 import { Library } from "../components/library";
+import { BoxShadow } from "../components/box-shadow";
 const routes: RouteObject[] = [
   {
     path: "/",
@@ -27,6 +28,7 @@ const routes: RouteObject[] = [
       { path: "dark-mode", element: <DarkMode /> },
       { path: "sidebar", element: <Sidebar /> },
       { path: "library", element: <Library /> },
+      { path: "box-shadow", element: <BoxShadow /> },
     ],
   },
 ];

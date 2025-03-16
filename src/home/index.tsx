@@ -18,6 +18,7 @@ const Home = () => {
         <Link to={"dark-mode"}>{"darkMode"}</Link>
         <Link to={"Sidebar"}>{"Sidebar"}</Link>
         <Link to={"library"}>{"library"}</Link>
+        <Link to={"box-shadow"}>{"boxShadow"}</Link>
       </div>
     </div>
   );
