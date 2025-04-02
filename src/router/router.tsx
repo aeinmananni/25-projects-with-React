@@ -12,6 +12,7 @@ import { DarkMode } from "../components/dark-mode";
 import { Sidebar } from "../components/sidebar";
 import { Library } from "../components/library";
 import { BoxShadow } from "../components/box-shadow";
+import { FilterProducts } from "../components/filter-products";
 const routes: RouteObject[] = [
   {
     path: "/",
@@ -29,6 +30,7 @@ const routes: RouteObject[] = [
       { path: "sidebar", element: <Sidebar /> },
       { path: "library", element: <Library /> },
       { path: "box-shadow", element: <BoxShadow /> },
+      { path: "filter-products", element: <FilterProducts /> },
     ],
   },
 ];
