@@ -6,7 +6,7 @@ const Home = () => {
       <div className="w-full h-full flex  overflow-hidden border-sky-900 border">
         <Outlet />
       </div>
-      <div className="w-32 h-full gap-2 border border-sky-900 flex flex-col items-center justify-start p-2">
+      <div className="w-36 h-full gap-2 border border-sky-900 flex flex-col items-center justify-start p-2 overflow-y-auto">
         <Link to={"/"}>{"passwordInput"}</Link>
         <Link to={"accordion"}>{"Accordion"}</Link>
         <Link to={"lorm-maker"}>{"Lorm maker"}</Link>
