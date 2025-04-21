@@ -20,6 +20,7 @@ const Home = () => {
         <Link to={"library"}>{"library"}</Link>
         <Link to={"box-shadow"}>{"boxShadow"}</Link>
         <Link to={"filter-products"}>{"filterProducts"}</Link>
+        <Link to={"todo-list"}>{"todoList"}</Link>
       </div>
     </div>
   );

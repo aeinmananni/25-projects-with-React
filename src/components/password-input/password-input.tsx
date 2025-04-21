@@ -10,7 +10,7 @@ const PasswordInput = () => {
         onClick={() => setToggle && setToggle((c) => !c)}
         type={toggle ? "text" : "password"}
         className="border-2  rounded-md w-64 shadow-lg py-2 px-2"
-        style={{
+        styles={{
           iconStyles: "left-2 top-3 text-lg ",
         }}
         icon={toggle ? <IoEyeOutline /> : <IoEyeOffOutline />}

@@ -1,18 +1,21 @@
 import { RouteObject, createBrowserRouter } from "react-router";
-import PasswordInput from "../components/password-input";
-import Accordion from "../components/accordion";
-import LormMaker from "../components/lorm-maker";
 import Home from "../home";
-import { Reviews } from "../components/reviews";
-import { ScrollTracker } from "../components/scroll-tracker";
-import { SearchImages } from "../components/search-images";
-import Navbar from "../components/navbar";
-import { SendEmail } from "../components/send-email";
-import { DarkMode } from "../components/dark-mode";
-import { Sidebar } from "../components/sidebar";
-import { Library } from "../components/library";
-import { BoxShadow } from "../components/box-shadow";
-import { FilterProducts } from "../components/filter-products";
+import {
+  Accordion,
+  BoxShadow,
+  DarkMode,
+  FilterProducts,
+  Library,
+  LormMaker,
+  Navbar,
+  PasswordInput,
+  Reviews,
+  ScrollTracker,
+  SearchImages,
+  SendEmail,
+  Sidebar,
+  TodoList,
+} from "../components";
 const routes: RouteObject[] = [
   {
     path: "/",
@@ -31,6 +34,7 @@ const routes: RouteObject[] = [
       { path: "library", element: <Library /> },
       { path: "box-shadow", element: <BoxShadow /> },
       { path: "filter-products", element: <FilterProducts /> },
+      { path: "todo-list", element: <TodoList /> },
     ],
   },
 ];

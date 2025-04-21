@@ -1,0 +1,1 @@
+export {default as LormMaker} from "./lorem-marker";

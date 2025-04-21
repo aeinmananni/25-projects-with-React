@@ -9,12 +9,12 @@ type StylesType = {
 export type InputProps = {
   icon?: React.ReactNode;
   label?: string;
-  style?: StylesType;
+  styles?: StylesType;
   onClick?: () => void;
 } & InputHTMLAttributes<HTMLInputElement>;
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ label, onClick, style, icon, ...props }, ref) => {
+  ({ label, onClick, styles: style, icon, ...props }, ref) => {
     return (
       <div className={`relative  ${style?.parentClassName}`}>
         <i

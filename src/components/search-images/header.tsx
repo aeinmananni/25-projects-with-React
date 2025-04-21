@@ -20,7 +20,7 @@ export default function Header() {
           value={input}
           placeholder="جستجو..."
           className="border w-full rounded-md py-1 px-1 outline-none text-sm"
-          style={{ parentClassName: "w-full sm:w-1/2" }}
+          styles={{ parentClassName: "w-full sm:w-1/2" }}
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
             setInput(e.target.value)
           }

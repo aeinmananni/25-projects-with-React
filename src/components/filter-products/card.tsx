@@ -11,7 +11,7 @@ type Props = {
 const Card = ({ title, exp, image, price, category }: Props) => {
   return (
     <div className="w-full  rounded-md p-2  overflow-hidden shadow-md shadow-slate-100">
-      <div className="w-full h-full flex flex-col gap-3 relative">
+      <div className="w-full h-full flex flex-col justify-between gap-3 relative">
         <Image
           src={image}
           styles={{ parentClassName: "!w-44" }}
