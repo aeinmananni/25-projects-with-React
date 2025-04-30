@@ -9,6 +9,7 @@ import {
 } from "react";
 import { AlertStatesType } from "../components/alert";
 import { BooksType } from "../components/library/model";
+import { TasksType } from "../components/todo-list/models";
 type ContextType = {
   toggle: boolean;
   showMenu: boolean;
@@ -24,6 +25,8 @@ type ContextType = {
   setSidebar: Dispatch<SetStateAction<boolean>>;
   books: BooksType[] | null;
   setBooks: Dispatch<SetStateAction<BooksType[] | null>>;
+  tasks: TasksType[];
+  setTasks: Dispatch<SetStateAction<TasksType[]>>;
 };
 
 const contexthanlder = createContext<ContextType | null>(null);
@@ -37,6 +40,15 @@ const ProviderContext = ({ children }: ProviderContextType) => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
   const [value, setValue] = useState<string>("boy");
   const [sidebar, setSidebar] = useState<boolean>(false);
+  const [tasks, setTasks] = useState<TasksType[]>(() => {
+    try {
+      const stored = localStorage.getItem("tasks");
+      return stored ? JSON.parse(stored) : [];
+    } catch (e) {
+      console.error("Failed to parse tasks from localStorage", e);
+      return [];
+    }
+  });
   const [books, setBooks] = useState<BooksType[] | null>(() => {
     const storedBooks = localStorage.getItem("books");
     return storedBooks ? JSON.parse(storedBooks) : [];
@@ -57,6 +69,7 @@ const ProviderContext = ({ children }: ProviderContextType) => {
       return JSON.parse(saveMode);
     }
   });
+
   const [alert, setAlert] = useState<AlertStatesType>({
     message: "",
     type: "success",
@@ -71,6 +84,12 @@ const ProviderContext = ({ children }: ProviderContextType) => {
       localStorage.setItem("books", JSON.stringify(books));
     }
   }, [books]);
+
+  useEffect(() => {
+    if (tasks !== null) {
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
+  }, [tasks]);
   return (
     <contexthanlder.Provider
       value={{
@@ -88,6 +107,8 @@ const ProviderContext = ({ children }: ProviderContextType) => {
         sidebar,
         books,
         setBooks,
+        tasks,
+        setTasks,
       }}
     >
       {children}

@@ -1,19 +1,38 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import { MdDelete, MdCheck, MdWarning, MdCheckCircle } from "react-icons/md";
+import { Task } from "./components";
+import { useReactContext } from "../../../../context";
+const Tasks = () => {
+  const { tasks, setTasks } = useReactContext();
 
-export default function Tasks() {
   return (
-    <div className="w-full flex justify-between  py-2">
-      <div className="w-full border border-yellow-400 text-justify p-1 rounded-lg flex flex-col gap-1 shadow-md shadow-yellow-200">
-        <MdWarning className="text-yellow-500" />
-        <small className="line-through">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti cum
-        </small>
-      </div>
-      <div className="flex  gap-1 ">
-        <MdDelete className="w-8 h-8 text-red-500" cursor={"pointer"} />
-        <MdCheck className="w-8 h-8 text-blue-600" cursor={"pointer"} />
-      </div>
+    <div className="border h-full overflow-y-auto p-1">
+      {tasks.length > 0 ? (
+        <div className="grid grid-cols-1 gap-2">
+          {tasks.map((item) => (
+            <Task
+              key={item.id}
+              {...item}
+              onDelete={() =>
+                setTasks((prev) => prev.filter((it) => it.id !== item.id))
+              }
+              onCompleted={() =>
+                setTasks((prev) =>
+                  prev.map((it) =>
+                    it.id === item.id
+                      ? { ...it, isCompleted: !it.isCompleted }
+                      : it
+                  )
+                )
+              }
+            />
+          ))}
+        </div>
+      ) : (
+        <div className="absolute top-1/4 left-[40%] text-red-500 font-bold text-xl">
+          {"تسکی موجود نیست"}
+        </div>
+      )}
     </div>
   );
-}
+};
+
+export default Tasks;
