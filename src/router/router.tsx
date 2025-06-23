@@ -15,6 +15,7 @@ import {
   SendEmail,
   Sidebar,
   TodoList,
+  Slider,
 } from "../components";
 const routes: RouteObject[] = [
   {
@@ -35,6 +36,7 @@ const routes: RouteObject[] = [
       { path: "box-shadow", element: <BoxShadow /> },
       { path: "filter-products", element: <FilterProducts /> },
       { path: "todo-list", element: <TodoList /> },
+      { path: "slider", element: <Slider /> },
     ],
   },
 ];

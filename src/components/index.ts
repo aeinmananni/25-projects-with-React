@@ -13,3 +13,4 @@ export * from "./search-images";
 export * from "./send-email";
 export * from "./sidebar";
 export * from "./todo-list";
+export * from "./slider";

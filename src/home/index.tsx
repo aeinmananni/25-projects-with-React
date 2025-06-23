@@ -21,6 +21,7 @@ const Home = () => {
         <Link to={"box-shadow"}>{"boxShadow"}</Link>
         <Link to={"filter-products"}>{"filterProducts"}</Link>
         <Link to={"todo-list"}>{"todoList"}</Link>
+        <Link to={"slider"}>{"slider"}</Link>
       </div>
     </div>
   );
