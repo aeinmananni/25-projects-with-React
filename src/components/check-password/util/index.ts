@@ -1,34 +1,35 @@
 import { CheckPasswordType } from '../models/checkPassword';
 
 export const CheckPasswordHandler = (score: number): CheckPasswordType | undefined => {
+  const percentValue = (score * 100) / 4;
   switch (score) {
     case 0:
       return {
-        percent: 10,
+        percent: percentValue,
         title: 'Very Weak',
         progressStatus: 'bg-red-700',
       };
     case 1:
       return {
-        percent: 25,
+        percent: percentValue,
         title: 'Weak',
         progressStatus: 'bg-orange-500',
       };
     case 2:
       return {
-        percent: 50,
+        percent: percentValue,
         title: 'Medium',
         progressStatus: 'bg-blue-500',
       };
     case 3:
       return {
-        percent: 75,
+        percent: percentValue,
         title: 'Good',
         progressStatus: 'bg-green-400',
       };
     case 4:
       return {
-        percent: 100,
+        percent: percentValue,
         title: 'Strong',
         progressStatus: 'bg-green-700',
       };
