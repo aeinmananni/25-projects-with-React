@@ -23,6 +23,7 @@ const Home = () => {
         <Link to={'todo-list'}>{'todoList'}</Link>
         <Link to={'slider'}>{'slider'}</Link>
         <Link to={'checkPassword'}>{'checkPassword'}</Link>
+        <Link to={'shop'}>{'shop'}</Link>
       </div>
     </div>
   );

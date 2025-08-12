@@ -15,3 +15,4 @@ export * from './sidebar';
 export * from './todo-list';
 export * from './slider';
 export * from './check-password';
+export * from './shop';

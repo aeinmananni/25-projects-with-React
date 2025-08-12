@@ -17,6 +17,7 @@ import {
   TodoList,
   Slider,
   CheckPassword,
+  Shop,
 } from '../components';
 const routes: RouteObject[] = [
   {
@@ -39,6 +40,7 @@ const routes: RouteObject[] = [
       { path: 'todo-list', element: <TodoList /> },
       { path: 'slider', element: <Slider /> },
       { path: 'checkPassword', element: <CheckPassword /> },
+      { path: 'shop', element: <Shop /> },
     ],
   },
 ];
