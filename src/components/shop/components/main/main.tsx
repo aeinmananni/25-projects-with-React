@@ -6,6 +6,12 @@ export default function Main() {
       <Cart />
       <Cart />
       <Cart />
+      <Cart />
+      <Cart />
+      <Cart />
+      <Cart />
+      <Cart />
+      <Cart />
     </div>
   );
 }
