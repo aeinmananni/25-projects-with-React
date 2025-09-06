@@ -11,3 +11,7 @@ export type ProductsType = {
   price: number;
   quntity: number;
 };
+
+export type ShopStateType = {
+  stort: 'ASC' | 'DESC';
+};

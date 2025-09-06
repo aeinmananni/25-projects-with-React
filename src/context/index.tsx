@@ -1,15 +1,9 @@
 /* eslint-disable react-refresh/only-export-components */
-import {
-  createContext,
-  useState,
-  useContext,
-  useEffect,
-  Dispatch,
-  SetStateAction,
-} from "react";
-import { AlertStatesType } from "../components/alert";
-import { BooksType } from "../components/library/model";
-import { TasksType } from "../components/todo-list/models";
+import { createContext, useState, useContext, useEffect, Dispatch, SetStateAction } from 'react';
+import { AlertStatesType } from '../components/alert';
+import { BooksType } from '../components/library/model';
+import { TasksType } from '../components/todo-list/models';
+import { ProductsType } from '../components/shop/models';
 type ContextType = {
   toggle: boolean;
   showMenu: boolean;
@@ -26,6 +20,8 @@ type ContextType = {
   books: BooksType[] | null;
   setBooks: Dispatch<SetStateAction<BooksType[] | null>>;
   tasks: TasksType[];
+  shopItems: ProductsType[];
+  setShopItems: Dispatch<SetStateAction<ProductsType[]>>;
   setTasks: Dispatch<SetStateAction<TasksType[]>>;
 };
 
@@ -38,19 +34,20 @@ type ProviderContextType = {
 const ProviderContext = ({ children }: ProviderContextType) => {
   const [toggle, setToggle] = useState<boolean>(false);
   const [showMenu, setShowMenu] = useState<boolean>(false);
-  const [value, setValue] = useState<string>("boy");
+  const [value, setValue] = useState<string>('boy');
   const [sidebar, setSidebar] = useState<boolean>(false);
+  const [shopItems, setShopItems] = useState<ProductsType[]>([]);
   const [tasks, setTasks] = useState<TasksType[]>(() => {
     try {
-      const stored = localStorage.getItem("tasks");
+      const stored = localStorage.getItem('tasks');
       return stored ? JSON.parse(stored) : [];
     } catch (e) {
-      console.error("Failed to parse tasks from localStorage", e);
+      console.error('Failed to parse tasks from localStorage', e);
       return [];
     }
   });
   const [books, setBooks] = useState<BooksType[] | null>(() => {
-    const storedBooks = localStorage.getItem("books");
+    const storedBooks = localStorage.getItem('books');
     return storedBooks ? JSON.parse(storedBooks) : [];
   });
   // const [darkMode, setDarkMode] = useState<boolean>(() => {
@@ -58,9 +55,9 @@ const ProviderContext = ({ children }: ProviderContextType) => {
   //   return saveMode ? JSON.parse(saveMode) : false;
   // });
   const [darkMode, setDarkMode] = useState<boolean>(() => {
-    const saveMode = localStorage.getItem("darkMode");
+    const saveMode = localStorage.getItem('darkMode');
     if (saveMode === null) {
-      if (window.matchMedia("(prefers-color-scheme:dark)").matches) {
+      if (window.matchMedia('(prefers-color-scheme:dark)').matches) {
         return true;
       } else {
         return false;
@@ -71,23 +68,23 @@ const ProviderContext = ({ children }: ProviderContextType) => {
   });
 
   const [alert, setAlert] = useState<AlertStatesType>({
-    message: "",
-    type: "success",
+    message: '',
+    type: 'success',
   });
 
   useEffect(() => {
-    localStorage.setItem("darkMode", JSON.stringify(darkMode));
+    localStorage.setItem('darkMode', JSON.stringify(darkMode));
   }, [darkMode]);
 
   useEffect(() => {
     if (books !== null) {
-      localStorage.setItem("books", JSON.stringify(books));
+      localStorage.setItem('books', JSON.stringify(books));
     }
   }, [books]);
 
   useEffect(() => {
     if (tasks !== null) {
-      localStorage.setItem("tasks", JSON.stringify(tasks));
+      localStorage.setItem('tasks', JSON.stringify(tasks));
     }
   }, [tasks]);
   return (
@@ -109,6 +106,8 @@ const ProviderContext = ({ children }: ProviderContextType) => {
         setBooks,
         tasks,
         setTasks,
+        shopItems,
+        setShopItems,
       }}
     >
       {children}
@@ -119,7 +118,7 @@ const ProviderContext = ({ children }: ProviderContextType) => {
 const useReactContext = () => {
   const context = useContext(contexthanlder);
   if (!context) {
-    throw new Error("useContextHandler must be used within a ProviderContext");
+    throw new Error('useContextHandler must be used within a ProviderContext');
   }
 
   return context;
