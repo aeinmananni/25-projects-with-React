@@ -9,12 +9,12 @@ import xiaomiImage1 from '../image/image7.jpg';
 
 export const BRANDS_ITEMS: SelectTypes[] = [
   { label: 'همه', value: 'All' },
-  { label: 'Apple', value: 'apple' },
-  { label: 'Samsung', value: 'samsung' },
-  { label: 'Xiaomi', value: 'xiaomi' },
-  { label: 'Huawei', value: 'huawei' },
-  { label: 'OnePlus', value: 'oneplus' },
-  { label: 'Nokia', value: 'nokia' },
+  { label: 'Apple', value: 'Apple' },
+  { label: 'Samsung', value: 'Samsung' },
+  { label: 'Xiaomi', value: 'Xiaomi' },
+  { label: 'Huawei', value: 'Huawei' },
+  { label: 'OnePlus', value: 'OnePlus' },
+  { label: 'Nokia', value: 'Nokia' },
 ];
 
 export const PRODUCTS_ITEMS: ProductsType[] = [
