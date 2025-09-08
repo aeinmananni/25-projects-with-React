@@ -22,6 +22,8 @@ type ContextType = {
   tasks: TasksType[];
   shopItems: ProductsType[];
   setShopItems: Dispatch<SetStateAction<ProductsType[]>>;
+  buyItems: ProductsType[];
+  setBuyItems: Dispatch<SetStateAction<ProductsType[]>>;
   setTasks: Dispatch<SetStateAction<TasksType[]>>;
 };
 
@@ -37,6 +39,7 @@ const ProviderContext = ({ children }: ProviderContextType) => {
   const [value, setValue] = useState<string>('boy');
   const [sidebar, setSidebar] = useState<boolean>(false);
   const [shopItems, setShopItems] = useState<ProductsType[]>([]);
+  const [buyItems, setBuyItems] = useState<ProductsType[]>([]);
   const [tasks, setTasks] = useState<TasksType[]>(() => {
     try {
       const stored = localStorage.getItem('tasks');
@@ -108,6 +111,8 @@ const ProviderContext = ({ children }: ProviderContextType) => {
         setTasks,
         shopItems,
         setShopItems,
+        buyItems,
+        setBuyItems,
       }}
     >
       {children}

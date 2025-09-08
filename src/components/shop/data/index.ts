@@ -24,7 +24,7 @@ export const PRODUCTS_ITEMS: ProductsType[] = [
     title: 'iPhone 14 Pro Max',
     image: IphoneImage1,
     availableBrand: 'Apple',
-    quntity: 15,
+    quntity: 0,
     price: 1199 * 50000, // 59,950,000 تومان
   },
   {
@@ -32,7 +32,7 @@ export const PRODUCTS_ITEMS: ProductsType[] = [
     title: 'iPhone 14',
     image: IphoneImage2,
     availableBrand: 'Apple',
-    quntity: 20,
+    quntity: 0,
     price: 999 * 50000, // 49,950,000 تومان
   },
   {
@@ -40,7 +40,7 @@ export const PRODUCTS_ITEMS: ProductsType[] = [
     title: 'iPhone 13',
     image: IphoneImage3,
     availableBrand: 'Apple',
-    quntity: 10,
+    quntity: 0,
     price: 799 * 50000, // 39,950,000 تومان
   },
 
@@ -50,7 +50,7 @@ export const PRODUCTS_ITEMS: ProductsType[] = [
     title: 'Samsung Galaxy S23 Ultra',
     image: samsungImage1,
     availableBrand: 'Samsung',
-    quntity: 25,
+    quntity: 0,
     price: 1199 * 50000, // 59,950,000 تومان
   },
   {
@@ -58,7 +58,7 @@ export const PRODUCTS_ITEMS: ProductsType[] = [
     title: 'Samsung Galaxy S23',
     image: samsungImage2,
     availableBrand: 'Samsung',
-    quntity: 30,
+    quntity: 0,
     price: 999 * 50000, // 49,950,000 تومان
   },
   {
@@ -66,7 +66,7 @@ export const PRODUCTS_ITEMS: ProductsType[] = [
     title: 'Samsung Galaxy A54',
     image: samsungImage3,
     availableBrand: 'Samsung',
-    quntity: 40,
+    quntity: 0,
     price: 449 * 50000, // 22,450,000 تومان
   },
 
@@ -76,7 +76,7 @@ export const PRODUCTS_ITEMS: ProductsType[] = [
     title: 'Xiaomi 13 Pro',
     image: xiaomiImage1,
     availableBrand: 'Xiaomi',
-    quntity: 18,
+    quntity: 0,
     price: 899 * 50000, // 44,950,000 تومان
   },
   {
@@ -84,7 +84,7 @@ export const PRODUCTS_ITEMS: ProductsType[] = [
     title: 'Xiaomi 13',
     image: '',
     availableBrand: 'Xiaomi',
-    quntity: 22,
+    quntity: 0,
     price: 699 * 50000, // 34,950,000 تومان
   },
   {
@@ -92,7 +92,7 @@ export const PRODUCTS_ITEMS: ProductsType[] = [
     title: 'Xiaomi Redmi Note 12',
     image: '',
     availableBrand: 'Xiaomi',
-    quntity: 45,
+    quntity: 0,
     price: 299 * 50000, // 14,950,000 تومان
   },
 
@@ -102,7 +102,7 @@ export const PRODUCTS_ITEMS: ProductsType[] = [
     title: 'Huawei P60 Pro',
     image: '',
     availableBrand: 'Huawei',
-    quntity: 14,
+    quntity: 0,
     price: 1099 * 50000, // 54,950,000 تومان
   },
   {
@@ -110,7 +110,7 @@ export const PRODUCTS_ITEMS: ProductsType[] = [
     title: 'Huawei Mate 50 Pro',
     image: '',
     availableBrand: 'Huawei',
-    quntity: 12,
+    quntity: 0,
     price: 999 * 50000, // 49,950,000 تومان
   },
   {
@@ -118,7 +118,7 @@ export const PRODUCTS_ITEMS: ProductsType[] = [
     title: 'Huawei Nova 11',
     image: '',
     availableBrand: 'Huawei',
-    quntity: 20,
+    quntity: 0,
     price: 499 * 50000, // 24,950,000 تومان
   },
 
@@ -128,7 +128,7 @@ export const PRODUCTS_ITEMS: ProductsType[] = [
     title: 'OnePlus 11',
     image: '',
     availableBrand: 'OnePlus',
-    quntity: 16,
+    quntity: 0,
     price: 799 * 50000, // 39,950,000 تومان
   },
   {
@@ -136,7 +136,7 @@ export const PRODUCTS_ITEMS: ProductsType[] = [
     title: 'OnePlus Nord 3',
     image: '',
     availableBrand: 'OnePlus',
-    quntity: 28,
+    quntity: 0,
     price: 499 * 50000, // 24,950,000 تومان
   },
   {
@@ -144,7 +144,7 @@ export const PRODUCTS_ITEMS: ProductsType[] = [
     title: 'OnePlus 10 Pro',
     image: '',
     availableBrand: 'OnePlus',
-    quntity: 19,
+    quntity: 0,
     price: 699 * 50000, // 34,950,000 تومان
   },
 
@@ -154,7 +154,7 @@ export const PRODUCTS_ITEMS: ProductsType[] = [
     title: 'Nokia G50',
     image: '',
     availableBrand: 'Nokia',
-    quntity: 35,
+    quntity: 0,
     price: 299 * 50000, // 14,950,000 تومان
   },
   {
@@ -162,7 +162,7 @@ export const PRODUCTS_ITEMS: ProductsType[] = [
     title: 'Nokia X30',
     image: '',
     availableBrand: 'Nokia',
-    quntity: 25,
+    quntity: 0,
     price: 399 * 50000, // 19,950,000 تومان
   },
   {
@@ -170,7 +170,7 @@ export const PRODUCTS_ITEMS: ProductsType[] = [
     title: 'Nokia G22',
     image: '',
     availableBrand: 'Nokia',
-    quntity: 40,
+    quntity: 0,
     price: 249 * 50000, // 12,450,000 تومان
   },
 ];

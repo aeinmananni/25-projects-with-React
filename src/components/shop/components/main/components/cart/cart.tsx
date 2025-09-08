@@ -5,9 +5,10 @@ type CartProps = {
   title: string;
   price: number;
   quntity: number;
+  onClick?: () => void;
 };
 
-export default function Cart({ image, title, price, quntity: quantity }: CartProps) {
+export default function Cart({ onClick, image, title, price, quntity: quantity }: CartProps) {
   return (
     <div className="flex flex-col items-center border border-slate-500  h-max rounded-lg overflow-hidden p-2">
       <div
@@ -20,7 +21,9 @@ export default function Cart({ image, title, price, quntity: quantity }: CartPro
       </div>
       <div className="w-full h-0.5 bg-gradient-to-r from-slate-500/10 via-slate-500 to-slate-500/10" />
       <div className="w-full flex items-center justify-between py-3">
-        <Button className="bg-slate-900 p-2 text-sm">افزودن به سبد خرید</Button>
+        <Button onClick={onClick} className="bg-slate-900 p-2 text-sm">
+          افزودن به سبد خرید
+        </Button>
         <span>{price} تومان</span>
       </div>
     </div>
