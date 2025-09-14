@@ -1,5 +1,5 @@
 import { Button } from '../../../../../../custom/button';
-
+import { formatCurrent } from '../../../../utils';
 type CartProps = {
   image: string;
   title: string;
@@ -9,6 +9,7 @@ type CartProps = {
 };
 
 export default function Cart({ onClick, image, title, price, quntity: quantity }: CartProps) {
+  const formatPrice = formatCurrent(price);
   return (
     <div className="flex flex-col items-center border border-slate-500  h-max rounded-lg overflow-hidden p-2">
       <div
@@ -24,7 +25,7 @@ export default function Cart({ onClick, image, title, price, quntity: quantity }
         <Button onClick={onClick} className="bg-slate-900 p-2 text-sm">
           افزودن به سبد خرید
         </Button>
-        <span>{price} تومان</span>
+        <span>{formatPrice}</span>
       </div>
     </div>
   );

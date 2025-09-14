@@ -1,7 +1,7 @@
 import { useReactContext } from '../../../../context';
 import { ProductsType } from '../../models';
 import { Cart } from './components';
-
+import { formatCurrent } from '../../utils';
 export default function Sidebar() {
   const { buyItems, setBuyItems } = useReactContext();
 
@@ -22,6 +22,8 @@ export default function Sidebar() {
   const totalPrice = buyItems.reduce((sum, item) => {
     return sum + item.price * item.quntity;
   }, 0);
+
+  const formatPrice = formatCurrent(totalPrice);
   return (
     <div className="flex w-1/3 h-full flex-col ">
       <div className="w-full flex flex-col gap-3 h-full border-4 border-pink-500 p-1.5 overflow-y-auto relative">
@@ -39,7 +41,7 @@ export default function Sidebar() {
       </div>
       <div className=" bottom-0  h-1/5 flex border w-full items-center justify-center flex-col gap-2">
         <span>{' مجموع کله قیمت'}</span>
-        <span>{`${totalPrice}تومان`}</span>
+        <span>{`${formatPrice}`}</span>
       </div>
     </div>
   );
